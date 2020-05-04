@@ -10,10 +10,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ViewsModule} from './views/views.module'
 import {HomeComponent} from './home/home.component'
+import {TestComponent} from './test/test.component'
 
 @NgModule({
   declarations: [AppComponent],
+  declarations: [
+    AppComponent,
     HomeComponent,
+    TestComponent
+  ],
   entryComponents: [],
   imports: [
   	BrowserModule, 
