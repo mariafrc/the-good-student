@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1">Horraires</h2>
+		<form [formGroup]="restrictionForm">
+			<div formGroupName="day">
+				<h4>Journée entière</h4>
+				<ion-item>
+				  <ion-label>Debut</ion-label>
+				  <ion-datetime displayFormat="HH:mm" color="dark" formControlName="begin" (ionChange)="onHourChange()"></ion-datetime>
+				</ion-item>
+				<ion-item>
+				  <ion-label>Fin</ion-label>
+				  <ion-datetime 
+				  	displayFormat="HH:mm" 
+				  	color="dark" 
+				  	formControlName="end" 
+				  	[min]="day.begin ? day.begin : '00:00'"
+				  	(ionChange)="onHourChange()"
+				  ></ion-datetime>
+				</ion-item>
+			</div>
+			<div formGroupName="pause">
+				<h4>Pause déjeuner</h4>
+				<ion-item>
+				  <ion-label>Debut</ion-label>
+				  <ion-datetime 
+				  	displayFormat="HH:mm" 
+				  	color="dark" 
+				  	formControlName="begin"
+				  	[min]="day.begin ? day.begin : '00:00'"
+				  	[max]="day.end ? day.end : '00:00'"
+				  	(ionChange)="onHourChange()"
+				  ></ion-datetime>
+				</ion-item>
+				<ion-item>
+				  <ion-label>Fin</ion-label>
+				  <ion-datetime 
+				  	displayFormat="HH:mm" 
+				  	color="dark" 
+				  	formControlName="end"
+				  	[min]=" pause.begin ? pause.begin : '00:00' "
+				  	[max]=" day.end ? day.end : '00:00' "
+				  ></ion-datetime>
+				</ion-item>
+			</div>
+			<div class="p-2 my-3" [ngStyle]="{background: '#fff'}">
+				<ion-text color="dark">
+					<h4>Avertissement:</h4>
+				</ion-text>
+				<ion-text color="dark">Ajouter de nouveaux horraires supprimera toutes les matières existantes.</ion-text>
+			</div>
+			<div class="d-flex align-items-center justify-content-between mt-2">
+				<ion-button color="dark" (click)="onSubmit()" [disabled]="restrictionForm.invalid || cantSubmit">
+					Valider
+				</ion-button>
+				<ion-button color="light" (click)="modalCtrl.dismiss()">
+					Annuler
+				</ion-button>
+			</div>
+		</form>
+	</div>
+</div>
