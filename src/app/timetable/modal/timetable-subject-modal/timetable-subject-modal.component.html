@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1">Matière</h2>
+		<form #subjectForm="ngForm">
+			<ion-item>
+			  <ion-label position="stacked">Nom *:</ion-label>
+			  <ion-input name="fullname" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+			  <ion-label position="stacked">Abreviation *:</ion-label>
+			  <ion-input name="shortname" maxLength="4" ngModel required></ion-input>
+			</ion-item>
+			<ion-item>
+			  <ion-label position="stacked">Professeur:</ion-label>
+			  <ion-input name="professor" ngModel></ion-input>
+			</ion-item>
+
+			<div class="d-flex align-items-center justify-content-between mt-2">
+				<ion-button color="dark" (click)="onSubmit(subjectForm.value)" [disabled]="subjectForm.invalid || cantSubmit">
+					Valider
+				</ion-button>
+				<ion-button color="light" (click)="modalCtrl.dismiss({action: 'back'})">
+					Annuler
+				</ion-button>
+			</div>
+		</form>
+	</div>
+</div>
