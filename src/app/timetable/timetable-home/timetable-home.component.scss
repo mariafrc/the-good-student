@@ -1,0 +1,40 @@
+#day{
+	color: var(--ion-color-dark);
+	font-family: var(--app-font-title2)
+}
+
+.day-title{
+	text-align: center;
+	margin: 20px 0px 10px 0px;
+	color: var(--ion-color-dark);
+}
+
+.subject-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	.subject{
+		margin: 5px;
+		border: 1px solid var(--ion-color-dark);
+		border-radius: 20px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        .subject-hour{
+        	background: var(--ion-color-dark);
+        	color: var(--ion-color-light);
+        	font-size: 15px;
+        	margin: 0px;
+        	padding: 10px 20px;
+        	border-radius: 20px;
+        }
+        .subject-content{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 50px 50px 50px;
+            padding-right: 10px;
+        	color: var(--ion-color-dark);
+        }
+	}
+}

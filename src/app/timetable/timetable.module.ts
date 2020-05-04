@@ -4,15 +4,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
+import {TimetableHomeComponent} from './timetable-home/timetable-home.component'
 import {TimetableHoursModalComponent} from './modal/timetable-hours-modal/timetable-hours-modal.component'
 import {TimetableSubjectModalComponent} from './modal/timetable-subject-modal/timetable-subject-modal.component' 
 import {SubjectInfoModalComponent} from './modal/subject-info-modal/subject-info-modal.component'
+
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'timetable', component: TimetableHomeComponent},
 ];
 
 @NgModule({
   declarations: [
+    TimetableHomeComponent,
     TimetableHoursModalComponent,
     TimetableSubjectModalComponent,
     SubjectInfoModalComponent

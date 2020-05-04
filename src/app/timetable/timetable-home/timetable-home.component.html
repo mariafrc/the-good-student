@@ -1,0 +1,135 @@
+<ion-header>
+	<ion-toolbar color="dark">
+    <ion-title>Emploi du temps</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm">
+    <div *ngIf="day">
+      <h3 class="day-title">Matinée</h3>
+      <div class="subject-container">
+        <div class="subject" *ngFor="let hour of morning">
+          <h5 class="subject-hour">{{hour.begin.replace(':', 'h')}} à {{hour.end.replace(':', 'h')}}</h5>
+          <div class="subject-content">
+            <span>{{hour.subject.shortname ? hour.subject.shortname : ''}}</span>
+            <span>
+              <ion-button 
+                color="dark" 
+                size="small" 
+                fill="clear" 
+                (click)="onViewSubject(hour.subject)"
+                *ngIf="!editModeOn && hour.subject.shortname"
+              >
+                <ion-icon slot="icon-only" name="information-circle"></ion-icon>
+              </ion-button>
+            </span>
+            <ion-button 
+              color="dark" 
+              size="small" 
+              fill="clear"
+              (click)="onToggleHomework(hour)"
+              *ngIf="!editModeOn && hour.subject.shortname"
+            >
+              <ion-icon slot="icon-only" [name]="hour.subject.homework ? 'star' : 'star-outline'"></ion-icon>
+            </ion-button>
+            
+            <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mt-5 day-title">Après-midi</h3>
+      <div class="subject-container">
+        <div class="subject" *ngFor="let hour of afternoon">
+          <h5 class="subject-hour">{{hour.begin.replace(':', 'h')}} à {{hour.end.replace(':', 'h')}}</h5>
+          <div class="subject-content">
+            <span>{{hour.subject.shortname ? hour.subject.shortname : ''}}</span>
+            <span>
+              <ion-button 
+                color="dark" 
+                size="small" 
+                fill="clear" 
+                (click)="onViewSubject(hour.subject)"
+                *ngIf="!editModeOn && hour.subject.shortname"
+              >
+                <ion-icon slot="icon-only" name="information-circle"></ion-icon>
+              </ion-button>
+            </span>
+            <ion-button 
+              color="dark" 
+              size="small" 
+              fill="clear"
+              (click)="onToggleHomework(hour)"
+              *ngIf="!editModeOn && hour.subject.shortname"
+            >
+              <ion-icon slot="icon-only" [name]="hour.subject.homework ? 'star' : 'star-outline'"></ion-icon>
+            </ion-button>
+            <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar *ngIf="day && !editModeOn">
+		<div class="d-flex align-items-center justify-content-between ml-3" [ngStyle]="{width: '90%'}">
+			<ion-button color="dark" [disabled]="day.id === 0" (click)="onChangeDay(day.id - 1)">
+				<ion-icon name="arrow-round-back"></ion-icon>
+			</ion-button>
+			<h3 id="day">{{day.name}}</h3>
+			<ion-button color="dark" [disabled]="day.id === 5" (click)="onChangeDay(day.id + 1)">
+				<ion-icon name="arrow-round-forward"></ion-icon>
+			</ion-button>
+		</div>
+	</ion-toolbar>
+
+  <ion-toolbar *ngIf="editModeOn">
+    <div class="d-flex justify-content-between align-items-center px-3">
+      <span>Mode edition</span>
+      <div>
+        <ion-button 
+          color="dark" 
+          shape="round"
+          size="small"
+          (click)="onEditSubject()"
+          [disabled]="selectedHourCount === 0"
+        >
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+        <ion-button
+          class="ml-3"
+          color="dark" 
+          shape="round"
+          size="small"
+          (click)="onResetSubject()"
+          [disabled]="selectedHourCount === 0"
+        >
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+        <ion-button color="dark" fill="clear" (click)="onToggleEdition()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+
+  <ion-tab-bar slot="bottom" color="dark">
+    <ion-tab-button tab="home" routerLink="/">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="clock" (click)="presentHoursModal()">
+      <ion-icon name="clock"></ion-icon>
+      <ion-label>Horraires</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="edit" (click)="onToggleEdition()">
+      <ion-icon name="grid"></ion-icon>
+      <ion-label>Mode edition</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
