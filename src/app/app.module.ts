@@ -8,12 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ViewsModule} from './views/views.module'
+import {TimetableModule} from './timetable/timetable.module'
 import {HomeComponent} from './home/home.component'
 import {TestComponent} from './test/test.component'
 
 @NgModule({
-  declarations: [AppComponent],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -24,7 +23,7 @@ import {TestComponent} from './test/test.component'
   	BrowserModule, 
   	IonicModule.forRoot(), 
   	AppRoutingModule,
-  	ViewsModule
+  	TimetableModule
   ],
   providers: [
     StatusBar,
