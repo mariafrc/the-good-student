@@ -15,13 +15,6 @@ export class DatabaseService {
 	    mode: "IDB",
 	    tables: [
 	    	/* -- For timetable -- */
-	    	{
-	        name: 'timetable_days',
-	        model: {
-	        	'id:int': {pk: true, notNull: true},
-            'name:string': {notNull: true},
-	        }
-		    },
 		    {
 	        name: 'timetable_hours',
 	        model: {
@@ -39,6 +32,16 @@ export class DatabaseService {
             }
 	        }
 		    },
+
+        /* -- For event --*/
+        {
+          name: 'event',
+          model: {
+            'id:uuid': {pk: true},
+            'label:string': {notNull: true},
+            'date:string': {notNull: true}
+          }
+        }
 	    ]
 		})
 
@@ -46,7 +49,7 @@ export class DatabaseService {
     console.log("database initialized")
   }
 
-  getTable(tableName: 'timetable_days' | 'timetable_hours'){
+  getTable(tableName: 'timetable_hours' | 'event'){
   	return nSQL(tableName)
   }
 }
