@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-toolbar color="dark">
+    <ion-title>Evenements</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div *ngIf="events">
+    <div *ngFor="let event of events" class="event-card">
+      <div>
+        <h4 class="event-date">{{event.date.format('D MMMM YYYY, HH:mm')}}</h4>
+        <h4 class="event-label">{{event.label}}</h4>
+      </div>
+      <div>
+        <ion-button  color="dark" fill="clear" (click)="onDeleteEvent(event.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+	<ion-tab-bar slot="bottom" color="dark">
+    <ion-tab-button tab="home" routerLink="/">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add" (click)="onShowForm('add')">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Ajouter</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

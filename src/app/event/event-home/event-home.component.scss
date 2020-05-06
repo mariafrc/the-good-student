@@ -1,0 +1,26 @@
+.event-card{
+	border: 1px solid var(--ion-color-dark);
+	border-left: 5px solid var(--ion-color-dark);
+	border-right: 5px solid var(--ion-color-dark);
+	margin: 10px;
+	margin-top: 15px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	h4{
+		margin: 0; 
+		padding: 0;
+		color: var(--ion-color-dark);
+	}
+	.event-date{
+		font-size: 15px;
+    font-weight: 700;
+	}
+
+	.event-label{
+		margin-top: 5px;
+		font-size: 17px;
+	}
+}
