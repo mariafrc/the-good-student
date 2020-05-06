@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {TimetableModule} from './timetable/timetable.module'
 import {HomeComponent} from './home/home.component'
 import {TestComponent} from './test/test.component'
+import {EventModule} from './event/event.module'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {TestComponent} from './test/test.component'
   	BrowserModule, 
   	IonicModule.forRoot(), 
   	AppRoutingModule,
-  	TimetableModule
+  	TimetableModule,
+    EventModule
   ],
   providers: [
     StatusBar,

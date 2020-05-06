@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1 mb-3">{{action === 'add' ? 'Nouvel évenement' : 'Modification'}}</h2>
+		<form #eventForm="ngForm">
+			<ion-item>
+			  <ion-label position="stacked">Description *:</ion-label>
+			  <ion-input name="label" required [(ngModel)]="event.label"></ion-input>
+			</ion-item>
+			<ion-item>
+			  <ion-label position="stacked">Date *:</ion-label>
+			  <ion-datetime name="date" displayFormat="DD-MM-YYYY HH:mm" [min]="now" [max]="max" required [(ngModel)]="event.date"></ion-datetime>
+			</ion-item>
+		</form>
+		<div class="d-flex align-items-center justify-content-between mt-3">
+			<ion-button color="dark" (click)="onSubmit()" [disabled]="eventForm.invalid || cantSubmit">
+				Valider
+			</ion-button>
+			<ion-button color="light" (click)="modalCtrl.dismiss()">
+				Annuler
+			</ion-button>
+		</div>
+	</div>
+</div>
