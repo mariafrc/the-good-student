@@ -41,7 +41,17 @@ export class DatabaseService {
             'label:string': {notNull: true},
             'date:string': {notNull: true}
           }
-        }
+        },
+
+        /* For notes --*/
+        {
+          name: 'note',
+          model: {
+            'id:uuid': {pk: true},
+            'title:string': {notNull: true},
+            'content:string': {notNull: true}
+          }
+        },
 	    ]
 		})
 
@@ -49,7 +59,7 @@ export class DatabaseService {
     console.log("database initialized")
   }
 
-  getTable(tableName: 'timetable_hours' | 'event'){
+  getTable(tableName: 'timetable_hours' | 'event' | 'note'){
   	return nSQL(tableName)
   }
 }
