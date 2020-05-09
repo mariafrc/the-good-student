@@ -49,7 +49,7 @@ export class DatabaseService {
           model: {
             'id:uuid': {pk: true},
             'title:string': {notNull: true},
-            'content:string': {notNull: true}
+            'content:string': {}
           }
         },
 	    ]
