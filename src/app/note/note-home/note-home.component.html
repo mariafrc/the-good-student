@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-toolbar color="dark">
+    <ion-title>Notes rapides</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="note-container" *ngFor="let note of notes">
+		<div class="note-header">
+			<h3 class="note-title">{{note.title}}</h3>
+			<div class="note-buttons">
+				<ion-button color="light" fill="clear" size="small" (click)="onShowForm('edit', note)">
+					<ion-icon slot="icon-only" name="hammer"></ion-icon>
+				</ion-button>
+				<ion-button color="light" fill="clear" size="small" (click)="onDeleteNote(note.id)">
+					<ion-icon slot="icon-only" name="trash"></ion-icon>
+				</ion-button>
+			</div>
+		</div>
+		<div class="note-content">
+			{{note.content}}
+		</div>
+		<div class="note-link">
+			<a [routerLink]="note.id"
+				*ngIf="note.content.length > maxLength && note.content.slice(-3) === '...'"
+			>Voir plus</a>
+		</div>
+	</div>
+</ion-content>
+
+<ion-footer>
+	<ion-tab-bar slot="bottom" color="dark">
+    <ion-tab-button tab="home" routerLink="/">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add" (click)="onShowForm('add')">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Ajouter</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
