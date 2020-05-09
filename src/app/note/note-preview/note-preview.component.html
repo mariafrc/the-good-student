@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-toolbar color="dark">
+    <ion-title>{{ note ? note.title : 'Chargement...'}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<p [ngStyle]="{margin: '10px'}">{{note ? note.content : ''}}</p>
+</ion-content>
+
+<ion-footer>
+	<ion-tab-bar slot="bottom" color="dark">
+    <ion-tab-button tab="back" routerLink="/note">
+      <ion-icon name="arrow-round-back"></ion-icon>
+      <ion-label>Retour</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="hammer" (click)="onShowForm()">
+      <ion-icon name="hammer"></ion-icon>
+      <ion-label>Modifier</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="delete" (click)="onDeleteNote()">
+      <ion-icon name="trash"></ion-icon>
+      <ion-label>Supprimer</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
