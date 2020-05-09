@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1 mb-3">{{action === 'add' ? 'Nouvelle note' : 'Modification'}}</h2>
+		<form #noteForm="ngForm" class="note-form">
+			<input type="text" name="title" placeholder="Titre" class="title" [(ngModel)]="note.title" required>
+			<ion-item>
+				<ion-textarea rows="6" [(ngModel)]="note.content" name="content"></ion-textarea>
+			</ion-item>
+		</form>
+		<div class="d-flex align-items-center justify-content-between mt-3">
+			<ion-button color="dark" (click)="onSubmitForm()" [disabled]="noteForm.invalid">
+				Valider
+			</ion-button>
+			<ion-button color="light" (click)="modalCtrl.dismiss()">
+				Annuler
+			</ion-button>
+		</div>
+	</div>
+</div>
+

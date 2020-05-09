@@ -12,6 +12,7 @@ import {TimetableModule} from './timetable/timetable.module'
 import {HomeComponent} from './home/home.component'
 import {TestComponent} from './test/test.component'
 import {EventModule} from './event/event.module'
+import {NoteModule} from './note/note.module'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {EventModule} from './event/event.module'
   	IonicModule.forRoot(), 
   	AppRoutingModule,
   	TimetableModule,
-    EventModule
+    EventModule,
+    NoteModule
   ],
   providers: [
     StatusBar,
