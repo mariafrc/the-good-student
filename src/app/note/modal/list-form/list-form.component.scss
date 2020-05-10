@@ -1,0 +1,28 @@
+.note-form{
+	margin: 10px;
+	border: 1px solid var(--ion-color-dark);
+	.title{
+		width: 100%;
+		background: var(--ion-color-dark);
+		color: var(--ion-color-light);
+		border: none;
+		padding: 10px;
+		font-family: var(--app-font-title2);
+		font-size: 17px;
+	}
+	.item-native{
+		background: var(--ion-color-dark);
+	}
+	.form-item{
+		border: none;
+		border-bottom: 5px solid var(--ion-color-dark);
+    padding: 7px 20px 5px 20px;
+    width: 100%;
+    margin: 0px 5px;
+    border-radius: 10px;
+    position: relative;
+    &:invalid{
+    	border-bottom: 5px solid var(--ion-color-danger);
+    }
+	}
+}

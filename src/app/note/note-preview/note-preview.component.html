@@ -5,7 +5,12 @@
 </ion-header>
 
 <ion-content>
-	<p [ngStyle]="{margin: '10px'}">{{note ? note.content : ''}}</p>
+	<p [ngStyle]="{margin: '10px'}"  *ngIf="note && note.type === 'text'">{{note.content}}</p>
+  <ion-list  *ngIf="note && note.type === 'list'">
+    <ion-item *ngFor="let elt of note.content">
+      <ion-text>{{elt.name}}</ion-text>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-footer>

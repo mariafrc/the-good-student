@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<div class="choice-container">
+			<div (click)="onChoose('text')" class="choice-button">
+				<ion-icon class="icon" slot="icon-only" name="text"></ion-icon>
+				<span>texte</span>
+			</div>
+			<div (click)="onChoose('list')" class="choice-button">
+				<ion-icon class="icon" slot="icon-only" name="list"></ion-icon>
+				<span>liste</span>
+			</div>
+		</div>
+	</div>
+</div>
+

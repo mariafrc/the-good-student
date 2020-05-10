@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import {DatabaseService} from '../database.service'
 
 export interface Note{
-	id?:string
+	id?: string
 	title: string
-	content?:string
+	content?: string | Array<any>
+  type: 'text' | 'list'
 }
 
 @Injectable({

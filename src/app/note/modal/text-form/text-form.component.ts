@@ -3,12 +3,12 @@ import { ModalController, NavParams } from '@ionic/angular';
 import {NoteService, Note} from '../../../services/note/note.service'
 
 @Component({
-  selector: 'app-note-form',
-  templateUrl: './note-form.component.html',
-  styleUrls: ['./note-form.component.scss'],
+  selector: 'app-text-form',
+  templateUrl: './text-form.component.html',
+  styleUrls: ['./text-form.component.scss'],
 })
-export class NoteFormComponent implements OnInit {
-	@Input() action: 'add' | 'edit'
+export class TextFormComponent implements OnInit {
+  @Input() action: 'add' | 'edit'
   note: any
   constructor(
   	private modalCtrl: ModalController,
@@ -21,7 +21,8 @@ export class NoteFormComponent implements OnInit {
   	{
   		this.note = {
   			title: '',
-  			content: ''
+  			content: '',
+        type: 'text'
   		}
   	}
   	else{

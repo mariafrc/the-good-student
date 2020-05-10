@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { IonicModule } from '@ionic/angular';
 import {NoteHomeComponent} from './note-home/note-home.component'
-import {NoteFormComponent} from './modal/note-form/note-form.component'
 import {NotePreviewComponent} from './note-preview/note-preview.component'
+import {TypeChoiceComponent} from './modal/type-choice/type-choice.component'
+import {TextFormComponent} from './modal/text-form/text-form.component'
+import {ListFormComponent} from './modal/list-form/list-form.component'
 
 const routes: Routes = [
 	{path: '', component: NoteHomeComponent},
@@ -15,17 +17,22 @@ const routes: Routes = [
 @NgModule({
   declarations: [
   	NoteHomeComponent,
-    NoteFormComponent,
-    NotePreviewComponent
+    NotePreviewComponent,
+    TypeChoiceComponent,
+    TextFormComponent,
+    ListFormComponent
   ],
   entryComponents: [
-    NoteFormComponent
+    TypeChoiceComponent,
+    TextFormComponent,
+    ListFormComponent
   ],
   imports: [
   	RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    ReactiveFormsModule
   ]
 })
 export class NoteModule { }

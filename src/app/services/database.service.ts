@@ -49,7 +49,8 @@ export class DatabaseService {
           model: {
             'id:uuid': {pk: true},
             'title:string': {notNull: true},
-            'content:string': {}
+            'content:any': {},
+            'type:string':{notNull: true, default: 'text'}
           }
         },
 	    ]

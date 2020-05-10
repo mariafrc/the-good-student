@@ -1,0 +1,27 @@
+.choice-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 10px;
+	.choice-button{
+		padding: 10px;
+		border: 1px solid var(--ion-color-dark);
+		border-radius: 5px;
+		display: flex;
+		color: var(--ion-color-dark);
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		box-shadow: 2px 2px 4px var(--ion-color-dark);
+		width: 100px;
+		height: 100px;
+		.icon{
+			width: 30px;
+			height: 30px;
+		}
+		span{
+			font-weight: 500;
+			font-size: 19px;
+			margin: 5px;
+		}
+	}
+}

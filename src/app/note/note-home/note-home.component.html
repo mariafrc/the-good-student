@@ -9,7 +9,7 @@
 		<div class="note-header">
 			<h3 class="note-title">{{note.title}}</h3>
 			<div class="note-buttons">
-				<ion-button color="light" fill="clear" size="small" (click)="onShowForm('edit', note)">
+				<ion-button color="light" fill="clear" size="small" (click)="onEdit(note)">
 					<ion-icon slot="icon-only" name="hammer"></ion-icon>
 				</ion-button>
 				<ion-button color="light" fill="clear" size="small" (click)="onDeleteNote(note.id)">
@@ -17,12 +17,16 @@
 				</ion-button>
 			</div>
 		</div>
-		<div class="note-content">
-			{{note.content}}
+		<div class="note-content" *ngIf="note.type === 'text'">
+			{{sliceText(note.content)}}
 		</div>
+		<ul class="note-list" *ngIf="note.type === 'list'">
+			<li *ngFor="let elt of sliceArray(note.content)">{{elt.name}}</li>
+		</ul>
 		<div class="note-link">
 			<a [routerLink]="note.id"
-				*ngIf="note.content.length > maxLength && note.content.slice(-3) === '...'"
+				*ngIf="(note.type === 'text' && note.content.length > maxLength) 
+								|| (note.type === 'list' && note.content.length > 2)"
 			>Voir plus</a>
 		</div>
 	</div>
@@ -35,7 +39,7 @@
       <ion-label>Accueil</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="add" (click)="onShowForm('add')">
+    <ion-tab-button tab="add" (click)="onAdd()">
       <ion-icon name="add-circle"></ion-icon>
       <ion-label>Ajouter</ion-label>
     </ion-tab-button>

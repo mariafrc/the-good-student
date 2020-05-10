@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1 mb-3">{{action === 'add' ? 'Nouvelle note' : 'Modification'}}</h2>
+		<form [formGroup]="noteForm" class="note-form">
+			<ion-item color="dark">
+				<ion-input placeholder="Titre" formControlName="title"></ion-input>
+			</ion-item>
+			<div formArrayName="content">
+				<div 
+					*ngFor="let content of noteContent.controls; let i=index" 
+					[formGroupName]="i"
+					class="d-flex align-items-center p-2"
+				>
+					<input type="text" class="form-item" formControlName="name" required>
+
+					<ion-button color="dark"  size="small" fill="clear" (click)="deleteNote(i)">
+						<ion-icon slot="icon-only" name="close"></ion-icon>
+					</ion-button>
+				</div>
+				<ion-button color="dark" (click)="addNote()" class="d-block mx-5 mt-3" [disabled]="noteContent.length >= 10">
+					<ion-icon slot="icon-only" name="add"></ion-icon>
+				</ion-button>
+			</div>
+		</form>
+		<div class="d-flex align-items-center justify-content-between mt-3">
+			<ion-button color="dark" (click)="onSubmitForm()" [disabled]="noteForm.invalid">
+				Valider
+			</ion-button>
+			<ion-button color="light" (click)="modalCtrl.dismiss()">
+				Annuler
+			</ion-button>
+		</div>
+	</div>
+</div>

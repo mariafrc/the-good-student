@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {NoteService, Note} from '../../services/note/note.service'
 import {ModalController} from '@ionic/angular'
-import {NoteFormComponent} from '../modal/note-form/note-form.component'
 import { AlertController } from '@ionic/angular';
+import {TypeChoiceComponent} from '../modal/type-choice/type-choice.component'
+import {ListFormComponent} from '../modal/list-form/list-form.component'
+import {TextFormComponent} from '../modal/text-form/text-form.component'
 
 @Component({
   selector: 'app-note-home',
@@ -23,21 +25,62 @@ export class NoteHomeComponent implements OnInit {
     this.initNotes()
   }
 
-  async initNotes(){
-    let notes = await this.noteService.getNotes()
-    notes.forEach(n=>{
-      if(n.content.length > this.maxLength)
-        n.content = n.content.slice(0,this.maxLength) + '...'
-    })
-    this.notes = notes
+  ionViewWillEnter(){
+    if(this.notes){
+      this.initNotes()
+    }
   }
 
-  async onShowForm(action: 'add' | 'edit', note: Note = null){
+  sliceText(text: string): string{
+    if(text.length > this.maxLength)
+      text = text.slice(0,this.maxLength) + '...'
+
+    return text
+  }
+
+  sliceArray(tab: Array<any>): Array<any>{
+    if(tab.length>2)
+      tab = [tab[0], {name: '...'}]
+
+    return tab
+  }
+
+  async initNotes(){
+    this.notes = await this.noteService.getNotes()
+  }
+
+  async onAdd(){
+    const typeModal = await this.modalCtrl.create({
+      component: TypeChoiceComponent,
+    })
+
+    await typeModal.present()
+
+    let result = await typeModal.onWillDismiss()
+    if(!result.data)
+      return
+
     const modal = await this.modalCtrl.create({
-      component: NoteFormComponent,
+      component: result.data.type === 'text' ? TextFormComponent : ListFormComponent,
       componentProps: {
-        action,
-        note: note ? {...note} : null
+        action: 'add',
+      }
+    })
+
+    await modal.present()
+
+    result = await modal.onWillDismiss()
+    if(result.data){
+      this.initNotes()
+    }
+  }
+
+  async onEdit(note: Note){
+    const modal = await this.modalCtrl.create({
+      component: note.type === 'text' ? TextFormComponent : ListFormComponent,
+      componentProps: {
+        action: 'edit',
+        note: {...note}
       }
     })
 

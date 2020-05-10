@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { NoteFormComponent } from './note-form.component';
+import { ListFormComponent } from './list-form.component';
 
-describe('NoteFormComponent', () => {
-  let component: NoteFormComponent;
-  let fixture: ComponentFixture<NoteFormComponent>;
+describe('ListFormComponent', () => {
+  let component: ListFormComponent;
+  let fixture: ComponentFixture<ListFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoteFormComponent ],
+      declarations: [ ListFormComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NoteFormComponent);
+    fixture = TestBed.createComponent(ListFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

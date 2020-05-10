@@ -3,7 +3,8 @@ import {NoteService, Note} from '../../services/note/note.service'
 import {ActivatedRoute, Router} from '@angular/router'
 import { AlertController } from '@ionic/angular';
 import {ModalController} from '@ionic/angular'
-import {NoteFormComponent} from '../modal/note-form/note-form.component'
+import {TextFormComponent} from '../modal/text-form/text-form.component'
+import {ListFormComponent} from '../modal/list-form/list-form.component'
 
 @Component({
   selector: 'app-note-preview',
@@ -29,7 +30,7 @@ export class NotePreviewComponent implements OnInit {
 
   async onShowForm(){
     const modal = await this.modalCtrl.create({
-      component: NoteFormComponent,
+      component: this.note.type === 'text' ? TextFormComponent : ListFormComponent,
       componentProps: {
         action: 'edit',
         note: {...this.note}

@@ -26,6 +26,15 @@
 		line-height: 1.5;
 		color: var(--ion-color-dark);
 	}
+	.note-list{
+		padding: 0px;
+		margin: 0px;
+		    list-style: none;
+		li{
+			margin: 5px;
+			color: var(--ion-color-dark);
+		}
+	}
 	.note-link{
 		display: flex;
 		padding: 0px 10px 10px 0px;
