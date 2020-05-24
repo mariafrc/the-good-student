@@ -53,6 +53,16 @@ export class DatabaseService {
             'type:string':{notNull: true, default: 'text'}
           }
         },
+
+        /* -- For sleep --*/
+        {
+          name: 'sleep',
+          model: {
+            'id:uuid': {pk: true},
+            'rhythm:string': {notNull: true},
+            'begin:string': {notNull: true, max: 5}
+          }
+        }
 	    ]
 		})
 
@@ -60,7 +70,7 @@ export class DatabaseService {
     console.log("database initialized")
   }
 
-  getTable(tableName: 'timetable_hours' | 'event' | 'note'){
+  getTable(tableName: 'timetable_hours' | 'event' | 'note' | 'sleep'){
   	return nSQL(tableName)
   }
 }
