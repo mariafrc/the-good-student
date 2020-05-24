@@ -1,0 +1,7 @@
+<svg [ngStyle]="{width: '90vw', height: '90vw', fill: fillColor, transform: 'rotate(' +rotation+ 'deg)'}">
+	<use *ngIf="name === 'clock-bg'" href="/assets/svg/clock-bg.svg#clock-bg"/>
+	<use *ngIf="name === 'everyman'" href="/assets/svg/everyman.svg#everyman"/>
+	<use *ngIf="name === 'biphasique-one'" href="/assets/svg/biphasique-one.svg#biphasique-one"/>
+	<use *ngIf="name === 'biphasique-two'" href="/assets/svg/biphasique-two.svg#biphasique-two"/>
+	<use *ngIf="name === 'monophasique'" href="/assets/svg/monophasique.svg#monophasique"/>
+</svg>

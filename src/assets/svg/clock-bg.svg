@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="clock-bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<g>
+	<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="50" cy="50" r="48.8"/>
+	<g>
+		<path d="M14.5,29.3L10.3,27l-1,1.7l4.2,2.4C13.8,30.5,14.2,29.9,14.5,29.3z"/>
+		<path d="M30.4,14.1l-2.7-4.7l-1.7,1l2.7,4.7C29.2,14.7,29.8,14.4,30.4,14.1z"/>
+		<path d="M71.3,15.1l2.7-4.7l-1.6-1l-2.7,4.7C70.2,14.4,70.7,14.7,71.3,15.1z"/>
+		<path d="M8.7,50.5c0-0.2,0-0.3,0-0.5H3v2h5.7C8.7,51.5,8.7,51,8.7,50.5z"/>
+		<path d="M50,9.2c0.3,0,0.7,0,1,0V4h-2v5.2C49.3,9.2,49.7,9.2,50,9.2z"/>
+		<path d="M86.5,31l4.2-2.4l-1-1.7l-4.1,2.4C85.8,29.9,86.2,30.5,86.5,31z"/>
+		<path d="M85.1,72.3l4.6,2.6l1-1.6L86,70.7C85.7,71.3,85.4,71.8,85.1,72.3z"/>
+		<path d="M70.1,86.6l2.3,4l1.7-1l-2.3-4C71.2,86,70.6,86.3,70.1,86.6z"/>
+		<path d="M91.3,50c0,0.2,0,0.3,0,0.5c0,0.5,0,1,0,1.5H96v-2H91.3z"/>
+		<path d="M50,91.8c-0.3,0-0.7,0-1,0V97h2v-5.2C50.7,91.8,50.3,91.8,50,91.8z"/>
+		<path d="M28.3,85.7l-2.3,4l1.6,1l2.3-4C29.4,86.3,28.8,86,28.3,85.7z"/>
+		<path d="M14,70.7l-4.6,2.6l1,1.6l4.6-2.6C14.6,71.8,14.3,71.3,14,70.7z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 47.4167 15.0695)" font-family="'MyriadPro-Regular'" font-size="5">24</text>
+	<text transform="matrix(1 0 0 1 68.0836 19.1524)" font-family="'MyriadPro-Regular'" font-size="5">2</text>
+	<text transform="matrix(1 0 0 1 47.4168 89.9854)" font-family="'MyriadPro-Regular'" font-size="5">12</text>
+	<text transform="matrix(1 0 0 1 68.0833 84.9859)" font-family="'MyriadPro-Regular'" font-size="5">10</text>
+	<text transform="matrix(1 0 0 1 81.1676 72.1527)" font-family="'MyriadPro-Regular'" font-size="5">8</text>
+	<text transform="matrix(1 0 0 1 87.854 52.6099)" font-family="'MyriadPro-Regular'" font-size="5">6</text>
+	<text transform="matrix(1.0313 0 0 1 81.1676 32.9859)" font-family="'MyriadPro-Regular'" font-size="5">4</text>
+	<text transform="matrix(1 0 0 1 9.3842 52.6099)" font-family="'MyriadPro-Regular'" font-size="5">18</text>
+	<text transform="matrix(1 0 0 1 14.9219 72.1525)" font-family="'MyriadPro-Regular'" font-size="5">16</text>
+	<text transform="matrix(1 0 0 1 28.1961 84.9859)" font-family="'MyriadPro-Regular'" font-size="5">14</text>
+	<text transform="matrix(1 0 0 1 30.3628 19.1525)" font-family="'MyriadPro-Regular'" font-size="5">22</text>
+	<text transform="matrix(1 0 0 1 14.9223 32.9859)" font-family="'MyriadPro-Regular'" font-size="5">20</text>
+</g>
+</svg>
