@@ -13,6 +13,7 @@ import {HomeComponent} from './home/home.component'
 import {TestComponent} from './test/test.component'
 import {EventModule} from './event/event.module'
 import {NoteModule} from './note/note.module'
+import {SleepModule} from './sleep/sleep.module'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {NoteModule} from './note/note.module'
   	AppRoutingModule,
   	TimetableModule,
     EventModule,
-    NoteModule
+    NoteModule,
+    SleepModule
   ],
   providers: [
     StatusBar,

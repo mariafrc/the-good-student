@@ -1,0 +1,18 @@
+.clock-container{
+	position: relative;
+	width: 100vw; height: 100vw;
+}
+.clock-element{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.clock-bg{
+	z-index: 1;
+}
+
+.clock-pointer{
+	z-index: 2;
+}

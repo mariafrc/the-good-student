@@ -7,6 +7,7 @@ const routes: Routes = [
 	{ path: '', loadChildren: './timetable/timetable.module#TimetableModule' },
 	{ path: 'event', loadChildren: './event/event.module#EventModule' },
 	{ path: 'note', loadChildren: './note/note.module#NoteModule' },
+	{ path: 'sleep', loadChildren: './sleep/sleep.module#SleepModule' },
 	{path: 'home', component: HomeComponent},
 	{path: 'test', component: TestComponent}
 ];
