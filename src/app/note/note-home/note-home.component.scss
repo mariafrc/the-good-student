@@ -2,46 +2,22 @@
 	margin: 10px;
 	margin-top: 20px;
 	padding: 0px;
-	border-radius: 3px;
+	border-radius: 10px;
 	border: 1px solid var(--ion-color-dark);
-	.note-header{
+	background: var(--ion-color-light);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+	.note-icon{
+		padding: 10px 20px;
 		margin: 0px;
-		padding: 5px;
+		height: 100%;
 		background: var(--ion-color-dark);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		.note-title{
-			margin: 0px;
-			padding: 0px;
-			color: var(--ion-color-light);
-			font-family: var(	--app-font-title2)
-		}
 	}
-	.note-content{
-		min-height: 10px;
-		max-height: 100px;
-		overflow: auto;
-		padding: 10px;
-		line-height: 1.5;
-		color: var(--ion-color-dark);
-	}
-	.note-list{
-		padding: 0px;
+	.note-title{
 		margin: 0px;
-		    list-style: none;
-		li{
-			margin: 5px;
-			color: var(--ion-color-dark);
-		}
-	}
-	.note-link{
-		display: flex;
-		padding: 0px 10px 10px 0px;
-		justify-content: flex-end;
-		a{
-			color: var(--ion-color-dark);
-			text-decoration: none;
-		}
+		color: var(--ion-color-dark);
+		font-family: var(	--app-font-title2)
 	}
 }

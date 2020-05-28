@@ -13,7 +13,7 @@ import {TextFormComponent} from '../modal/text-form/text-form.component'
 })
 export class NoteHomeComponent implements OnInit {
 	notes: Array<Note>
-  maxLength: number = 70
+  maxLength: number = 10
   constructor(
   	private noteService: NoteService,
     private modalCtrl: ModalController,
@@ -31,19 +31,26 @@ export class NoteHomeComponent implements OnInit {
     }
   }
 
-  sliceText(text: string): string{
+  sliceTitle(text: string): string{
     if(text.length > this.maxLength)
-      text = text.slice(0,this.maxLength) + '...'
+      text = text.slice(0,this.maxLength) + ' ...'
 
     return text
   }
 
-  sliceArray(tab: Array<any>): Array<any>{
-    if(tab.length>2)
-      tab = [tab[0], {name: '...'}]
+  // sliceText(text: string): string{
+  //   if(text.length > this.maxLength)
+  //     text = text.slice(0,this.maxLength) + '...'
 
-    return tab
-  }
+  //   return text
+  // }
+
+  // sliceArray(tab: Array<any>): Array<any>{
+  //   if(tab.length>2)
+  //     tab = [tab[0], {name: '...'}]
+
+  //   return tab
+  // }
 
   async initNotes(){
     this.notes = await this.noteService.getNotes()
@@ -75,42 +82,42 @@ export class NoteHomeComponent implements OnInit {
     }
   }
 
-  async onEdit(note: Note){
-    const modal = await this.modalCtrl.create({
-      component: note.type === 'text' ? TextFormComponent : ListFormComponent,
-      componentProps: {
-        action: 'edit',
-        note: {...note}
-      }
-    })
+  // async onEdit(note: Note){
+  //   const modal = await this.modalCtrl.create({
+  //     component: note.type === 'text' ? TextFormComponent : ListFormComponent,
+  //     componentProps: {
+  //       action: 'edit',
+  //       note: {...note}
+  //     }
+  //   })
 
-    await modal.present()
+  //   await modal.present()
 
-    const {data} = await modal.onWillDismiss()
-    if(data){
-      this.initNotes()
-    }
-  }
+  //   const {data} = await modal.onWillDismiss()
+  //   if(data){
+  //     this.initNotes()
+  //   }
+  // }
 
-  async onDeleteNote(noteId: string){
-    const alert = await this.alertController.create({
-      header: 'Confirmation',
-      message: 'Voulez vous vraiment supprimer cette note?',
-      buttons: [
-        {
-          text: 'Non',
-          role: 'cancel'
-        }, {
-          text: 'Oui',
-          handler: async () => {
-            await this.noteService.deleteNote(noteId)
-            this.notes = this.notes.filter(n => n.id !== noteId)
-          }
-        }
-      ]
-    })
+  // async onDeleteNote(noteId: string){
+  //   const alert = await this.alertController.create({
+  //     header: 'Confirmation',
+  //     message: 'Voulez vous vraiment supprimer cette note?',
+  //     buttons: [
+  //       {
+  //         text: 'Non',
+  //         role: 'cancel'
+  //       }, {
+  //         text: 'Oui',
+  //         handler: async () => {
+  //           await this.noteService.deleteNote(noteId)
+  //           this.notes = this.notes.filter(n => n.id !== noteId)
+  //         }
+  //       }
+  //     ]
+  //   })
 
-    await alert.present()
-  }
+  //   await alert.present()
+  // }
 
 }

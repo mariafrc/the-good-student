@@ -6,28 +6,14 @@
 
 <ion-content>
 	<div class="note-container" *ngFor="let note of notes">
-		<div class="note-header">
-			<h3 class="note-title">{{note.title}}</h3>
-			<div class="note-buttons">
-				<ion-button color="light" fill="clear" size="small" (click)="onEdit(note)">
-					<ion-icon slot="icon-only" name="hammer"></ion-icon>
-				</ion-button>
-				<ion-button color="light" fill="clear" size="small" (click)="onDeleteNote(note.id)">
-					<ion-icon slot="icon-only" name="trash"></ion-icon>
-				</ion-button>
-			</div>
-		</div>
-		<div class="note-content" *ngIf="note.type === 'text'">
-			{{sliceText(note.content)}}
-		</div>
-		<ul class="note-list" *ngIf="note.type === 'list'">
-			<li *ngFor="let elt of sliceArray(note.content)">{{elt.name}}</li>
-		</ul>
-		<div class="note-link">
-			<a [routerLink]="note.id"
-				*ngIf="(note.type === 'text' && note.content.length > maxLength) 
-								|| (note.type === 'list' && note.content.length > 2)"
-			>Voir plus</a>
+		<span class="note-icon">
+			<ion-icon slot="icon-only" color="light" [name]="note.type" [ngStyle]="{transform: 'scale(1.5)'}"></ion-icon>
+		</span>
+		<div class="d-flex justify-content-between align-items-center px-2" [ngStyle]="{width: '100%'}">
+			<h3 class="note-title">{{sliceTitle(note.title)}}</h3>
+			<ion-button color="dark" fill="clear" size="small" [routerLink]="note.id">
+				<ion-icon slot="icon-only" name="eye"></ion-icon>
+			</ion-button>
 		</div>
 	</div>
 </ion-content>

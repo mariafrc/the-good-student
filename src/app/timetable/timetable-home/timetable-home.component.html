@@ -12,29 +12,27 @@
         <div class="subject" *ngFor="let hour of morning">
           <h5 class="subject-hour">{{hour.begin.replace(':', 'h')}} à {{hour.end.replace(':', 'h')}}</h5>
           <div class="subject-content">
-            <span>{{hour.subject.shortname ? hour.subject.shortname : ''}}</span>
-            <span>
-              <ion-button 
+            <div>{{hour.subject.shortname ? hour.subject.shortname : ''}}</div>
+            <div class="subject-buttons">
+              <ion-icon 
                 color="dark" 
-                size="small" 
-                fill="clear" 
+                slot="icon-only" 
+                name="information-circle"
                 (click)="onViewSubject(hour.subject)"
+                [ngStyle]="{transform: 'scale(1.5)', marginRight: '15px'}"
                 *ngIf="!editModeOn && hour.subject.shortname"
-              >
-                <ion-icon slot="icon-only" name="information-circle"></ion-icon>
-              </ion-button>
-            </span>
-            <ion-button 
-              color="dark" 
-              size="small" 
-              fill="clear"
-              (click)="onToggleHomework(hour)"
-              *ngIf="!editModeOn && hour.subject.shortname"
-            >
-              <ion-icon slot="icon-only" [name]="hour.subject.homework ? 'star' : 'star-outline'"></ion-icon>
-            </ion-button>
-            
-            <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+              ></ion-icon>
+              <ion-icon 
+                color="dark" 
+                (click)="onToggleHomework(hour)"
+                [ngStyle]="{transform: 'scale(1.5)'}"
+                *ngIf="!editModeOn && hour.subject.shortname"
+                slot="icon-only" 
+                [name]="hour.subject.homework ? 'star' : 'star-outline'"
+
+              ></ion-icon>
+              <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+            </div>
           </div>
         </div>
       </div>
@@ -44,28 +42,27 @@
         <div class="subject" *ngFor="let hour of afternoon">
           <h5 class="subject-hour">{{hour.begin.replace(':', 'h')}} à {{hour.end.replace(':', 'h')}}</h5>
           <div class="subject-content">
-            <span>{{hour.subject.shortname ? hour.subject.shortname : ''}}</span>
-            <span>
-              <ion-button 
+            <div>{{hour.subject.shortname ? hour.subject.shortname : ''}}</div>
+            <div class="subject-buttons">
+              <ion-icon 
                 color="dark" 
-                size="small" 
-                fill="clear" 
+                slot="icon-only" 
+                name="information-circle"
                 (click)="onViewSubject(hour.subject)"
+                [ngStyle]="{transform: 'scale(1.5)', marginRight: '15px'}"
                 *ngIf="!editModeOn && hour.subject.shortname"
-              >
-                <ion-icon slot="icon-only" name="information-circle"></ion-icon>
-              </ion-button>
-            </span>
-            <ion-button 
-              color="dark" 
-              size="small" 
-              fill="clear"
-              (click)="onToggleHomework(hour)"
-              *ngIf="!editModeOn && hour.subject.shortname"
-            >
-              <ion-icon slot="icon-only" [name]="hour.subject.homework ? 'star' : 'star-outline'"></ion-icon>
-            </ion-button>
-            <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+              ></ion-icon>
+              <ion-icon 
+                color="dark" 
+                (click)="onToggleHomework(hour)"
+                [ngStyle]="{transform: 'scale(1.5)'}"
+                *ngIf="!editModeOn && hour.subject.shortname"
+                slot="icon-only" 
+                [name]="hour.subject.homework ? 'star' : 'star-outline'"
+
+              ></ion-icon>
+              <ion-checkbox [name]="hour.id" color="dark" class="ml-3" *ngIf="editModeOn" [ngModel]="false"></ion-checkbox>
+            </div>
           </div>
         </div>
       </div>
