@@ -8,25 +8,22 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {TimetableModule} from './timetable/timetable.module'
-import {HomeComponent} from './home/home.component'
-import {TestComponent} from './test/test.component'
-import {EventModule} from './event/event.module'
-import {NoteModule} from './note/note.module'
-import {SleepModule} from './sleep/sleep.module'
+
+import {GlobalModule} from './modules/global/global.module'
+import {TimetableModule} from './modules/timetable/timetable.module'
+import {EventModule} from './modules/event/event.module'
+import {NoteModule} from './modules/note/note.module'
+import {SleepModule} from './modules/sleep/sleep.module'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    TestComponent
-  ],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
   	BrowserModule, 
   	IonicModule.forRoot(), 
   	AppRoutingModule,
-  	TimetableModule,
+  	GlobalModule,
+    TimetableModule,
     EventModule,
     NoteModule,
     SleepModule
