@@ -17,8 +17,7 @@
   	
   	<div class="home-card" routerLink="/note">
   		<p class="link-text">
-  			Notes<br> 
-  			rapide
+  			Notes
   		</p>
   	</div>
   	
@@ -34,7 +33,13 @@
 
 <ion-footer>
 	<div id="footer-container" class="d-flex justify-content-end align-items-center pr-3">
-		<ion-icon name="information-circle" color="light" [ngStyle]="{transform: 'scale(1.5)'}" class="m-2"></ion-icon>
-		<ion-icon name="menu" color="light" [ngStyle]="{transform: 'scale(1.5)'}" class="m-2 ml-4"></ion-icon>
+		<ion-icon 
+      name="information-circle" 
+      color="light" 
+      [ngStyle]="{transform: 'scale(1.5)'}" 
+      class="m-2"
+      (click)="onShowModal()"
+    ></ion-icon>
+		<!-- <ion-icon name="menu" color="light" [ngStyle]="{transform: 'scale(1.5)'}" class="m-2 ml-4"></ion-icon> -->
 	</div>
 </ion-footer>

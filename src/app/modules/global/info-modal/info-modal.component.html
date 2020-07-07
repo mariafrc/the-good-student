@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center align-items-center" [ngStyle]="{height: '100%'}">
+	<div class="p-4" 
+		[ngStyle]="{
+			background: 'var(--ion-color-light)', 
+			'border-radius': '5px', 
+			'width': '80%',
+			'max-height': '90%',
+			'overflow': 'auto'
+		}"
+	>
+		<h2 align="center" class="m-1 mb-3">Informations</h2>
+		<p>Ce projet a été conçu pour aider les etudiants à mieux gérer leur emploi du temps et ainsi mieux se concentrer dans les etudes.</p>
+		<p>Contact: franckbemaria@gmail.com</p>
+		<div class="d-flex align-items-center justify-content-end mt-3">
+			<ion-button color="light" (click)="modalCtrl.dismiss()">
+				fermer
+			</ion-button>
+		</div>
+	</div>
+</div>

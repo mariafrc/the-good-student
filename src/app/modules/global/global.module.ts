@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component'
 import {TestComponent} from './test/test.component'
+import {InfoModalComponent} from './info-modal/info-modal.component'
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,11 +13,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, TestComponent],
+  declarations: [HomeComponent, TestComponent, InfoModalComponent],
   imports: [
   	RouterModule.forChild(routes),
     CommonModule,
     IonicModule,
-  ]
+  ],
+  entryComponents: [InfoModalComponent]
 })
 export class GlobalModule { }
