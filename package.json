@@ -1,8 +1,7 @@
 {
-  "name": "blank",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "the-good-student",
+  "version": "1.0.0",
+  "author": "franckBemaria",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -68,7 +67,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project",
+  "description": "Timetable management for students",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
