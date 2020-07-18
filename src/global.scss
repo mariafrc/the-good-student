@@ -25,9 +25,19 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@font-face {
+  font-family: 'mybitter';
+  src: url('assets/fonts/Bitter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Bradley';
+  src: url('assets/fonts/BRADHITC.TTF');
+}
+
 :root{
-	--app-font-title1: 'bitter';
-	--app-font-title2: 'Bradley Hand ITC';
+	--app-font-title1: 'mybitter';
+	--app-font-title2: 'Bradley';
 }
 
 .modal-wrapper{
