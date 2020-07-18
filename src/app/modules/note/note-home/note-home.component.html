@@ -10,7 +10,7 @@
 			<ion-icon slot="icon-only" color="light" [name]="note.type" [ngStyle]="{transform: 'scale(1.5)'}"></ion-icon>
 		</span>
 		<div class="d-flex justify-content-between align-items-center px-2" [ngStyle]="{width: '100%'}">
-			<h3 class="note-title">{{sliceTitle(note.title)}}</h3>
+			<h3 class="note-title">{{ note.title }}</h3>
 			<ion-button color="dark" fill="clear" size="small" [routerLink]="note.id">
 				<ion-icon slot="icon-only" name="eye"></ion-icon>
 			</ion-button>

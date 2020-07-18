@@ -11,7 +11,7 @@
 		<h2 align="center" class="m-1 mb-3">{{action === 'add' ? 'Nouvelle note' : 'Modification'}}</h2>
 		<form [formGroup]="noteForm" class="note-form">
 			<ion-item color="dark">
-				<ion-input placeholder="Titre" formControlName="title"></ion-input>
+				<ion-input placeholder="Titre" formControlName="title" maxLength="15"></ion-input>
 			</ion-item>
 			<div formArrayName="content">
 				<div 

@@ -11,7 +11,7 @@
 		<h2 align="center" class="m-1 mb-3">{{action === 'add' ? 'Nouvelle note' : 'Modification'}}</h2>
 		<form #noteForm="ngForm" class="note-form">
 			<ion-item color="dark">
-				<ion-input name="title" placeholder="Titre" [(ngModel)]="note.title" required></ion-input>
+				<ion-input name="title" placeholder="Titre" [(ngModel)]="note.title" maxLength="15" required></ion-input>
 			</ion-item>
 			<ion-item *ngIf="note.type === 'text'">
 				<ion-textarea rows="6" [(ngModel)]="note.content" name="content"></ion-textarea>
